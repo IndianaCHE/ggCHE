@@ -1,6 +1,5 @@
 tfcs_colors <- list(
   nine = rgb(254, 184, 34, maxColorValue = 255),
-  `9` = rgb(254, 184, 34, maxColorValue = 255),
   ten = rgb(255, 224, 83, maxColorValue = 255),
   eleven = rgb(179, 246, 139, maxColorValue = 255),
   twelve = rgb(114, 206, 231, maxColorValue = 255),
@@ -69,20 +68,33 @@ tfcs_color_values <- c(
   Prepare = tfcs_colors$Prepare,
   Pay = tfcs_colors$Pay,
   Primary = tfcs_colors$Primary,
-  Primary2 = tfcs_colors$Primary2
+  Primary2 = tfcs_colors$Primary2,
+
+  # Unnamed for matching:
+  tfcs_colors$Primary,
+  # tfcs_colors$Primary2,
+  tfcs_colors$nine,
+  tfcs_colors$ten,
+  tfcs_colors$eleven,
+  tfcs_colors$twelve,
+  tfcs_colors$Plan,
+  tfcs_colors$Prepare,
+  tfcs_colors$Pay
   )
 
-scale_color_tfcs <- function(){
+scale_color_tfcs <- function(...){
   scale_color_manual(
     values = tfcs_color_values,
-    na.value = tfcs_colors$primary
+    na.value = tfcs_colors$primary,
+    ...
     )
 }
 
-scale_fill_tfcs <- function(){
+scale_fill_tfcs <- function(...){
   scale_fill_manual(
     values = tfcs_color_values,
-    na.value = tfcs_colors$primary
+    na.value = tfcs_colors$primary,
+    ...
     )
 }
 
@@ -157,6 +169,7 @@ theme_tfcs <- function(base_size = 12, base_family = "Gotham HTF"){
     panel.grid.major = NULL,
     panel.grid.major.x = element_blank(),
     panel.grid.minor = element_line(size = line_size / 2),
+    panel.grid.minor.x = element_blank(),
     panel.spacing = unit(half_line, "pt"),
     panel.spacing.x = NULL,
     panel.spacing.y = NULL,
