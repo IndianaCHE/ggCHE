@@ -1,0 +1,10 @@
+Package: ggCHE
+Title: Define Themes, Scales and Palettes for Indiana CHE
+Version: 0.0.0.9000
+Authors@R: person("Alex", "Axthelm", email = "AAxthelm@CHE.in.gov", role = c("aut", "cre"))
+Description: This package defines themes for `ggplot2` consistent with Indiana Commission for Higher Education Brand Standards
+Depends: R (>= 3.4.1)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: testthat
